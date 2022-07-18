@@ -1,2 +1,5 @@
 # Online-Store
-A shopping website with PHP and Laravel
+
+
+
+** I am completing this online-store website 👩🏻‍💻 **
