@@ -72,7 +72,7 @@ body {
 
 input[type="text"], button{
   font-family: sans-font !important;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
