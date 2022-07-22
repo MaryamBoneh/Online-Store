@@ -97,7 +97,7 @@
                                 <img class="img-fluid" src="img/cat-1.png" alt="">
                             </div>
                             <div class="flex-fill text-right px-4">
-                                <h6>{{ $category }}</h6>
+                                <h6>{{ $category.title }}</h6>
                                 <small class="text-body">۱۴ محصول</small>
                             </div>
                         </div>
