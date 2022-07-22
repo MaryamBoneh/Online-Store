@@ -4,21 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Image;
 use App\Models\Category;
 
 class ProductController extends Controller
 {
-
-    function index(){
-        $categories = Category::all();
-        $products = Product::all();
-
-        return view("index",[
-            "categories"=>$categories,
-            "products"=>$products
-        ]);
-    }
 
     function get_products(){
         $products = Product::join('images','products.id','=','images.product_id')->get(['products.*','images.url']);
