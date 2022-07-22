@@ -97,7 +97,7 @@
                                 <img class="img-fluid" src="img/cat-1.png" alt="">
                             </div>
                             <div class="flex-fill text-right px-4">
-                                <h6>{{ $category.title }}</h6>
+                                <h6>{{ $category->title }}</h6>
                                 <small class="text-body">۱۴ محصول</small>
                             </div>
                         </div>
@@ -152,9 +152,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">{{ $product.name }}</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">{{ $product->name }}</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>{{ $product.price_off }}</h5><h6 class="text-muted ml-2"><del>{{ $product.price }}</del></h6>
+                            <h5>{{ $product->price_off }}</h5><h6 class="text-muted ml-2"><del>{{ $product->price }}</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
