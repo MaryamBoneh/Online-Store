@@ -11,8 +11,8 @@ class ProductController extends Controller
 {
 
     function index(){
-        $products = Product::join('images','products.id','=','images.product_id')->get(['products.*','images.url']);
         $categories = Category::all();
+        $products = Product::all();
 
         return view("index",[
             "categories"=>$categories,
