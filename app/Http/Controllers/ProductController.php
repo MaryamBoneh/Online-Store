@@ -13,7 +13,7 @@ class ProductController extends Controller
         $products = Product::join('images','products.id','=','images.product_id')->get(['products.*','images.url']);
 
         return view("index",[
-            "products"=>$products
+            "products" => $products
         ]);
     }
 
@@ -21,12 +21,16 @@ class ProductController extends Controller
         $categories = Category::all();
 
         return view("index",[
-            "categories"=>$products
+            "categories" => $products
         ]);
     }
    
-    function product_detail(){
-        return view('product');
+    function product_details($id){
+        $product = Product::join('images','products.id','=','images.product_id')->get(['products.*','images.url'])->find($id);
+
+        return view("product",[
+            "product" => $product,
+        ]);
     }
 
     function get_by_category($category_id){
