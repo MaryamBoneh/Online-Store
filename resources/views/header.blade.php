@@ -94,7 +94,7 @@
                             <a href="detail.html" class="nav-item py-2 nav-link">جزییات خرید</a>
                             <!-- <a href="checkout.html" class="dropdown-item">Checkout</a> -->
                         </div>
-                        <div class="navbar-nav mr-auto py-0 d-none d-lg-block">
+                        <div class="navbar-nav mr-auto pt-3 d-none d-lg-block">
                             
                             <a href="" class="btn ml-4 px-0">
                                 <span class=" text-secondary">ورود به سایت</span>
