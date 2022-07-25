@@ -1,9 +1,9 @@
 @extends('template')
+
 @section('title')
 سبد خرید
 @endsection
 
-@extends('template')
 @section('content')
 
 

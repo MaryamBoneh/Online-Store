@@ -1,9 +1,9 @@
 @extends('template')
+
 @section('title')
 فروشگاه آنلاین
 @endsection
 
-@extends('template')
 @section('content')
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">

@@ -1,9 +1,9 @@
 @extends('template')
+
 @section('title')
 {{$product->name}}
 @endsection
 
-@extends('template')
 @section('content')
 
     <!-- Breadcrumb Start -->
