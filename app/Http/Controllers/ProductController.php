@@ -9,10 +9,10 @@ use App\Models\Category;
 class ProductController extends Controller
 {
 
-    function get_products(){
+    function get_all_products(){
         $products = Product::join('images','products.id','=','images.product_id')->get(['products.*','images.url']);
 
-        return view("index",[
+        return view("products",[
             "products" => $products
         ]);
     }
