@@ -49,10 +49,10 @@
                         <small class="pt-1">(از مجموع ۱۰ نظر)</small>
                     </div>
                     @if ($product->price_off)
-                        <h6 class="text-muted mr-2"><del>{{ $product->price }} تومان</del></h6>
-                        <h3 class="text-danger font-weight-semi-bold mb-4">{{ $product->price_off }} <small>تومان</small></h3>
+                        <h6 class="text-muted mr-2"><del>{{ number_format($product->price) }} تومان</del></h6>
+                        <h3 class="text-danger font-weight-semi-bold mb-4">{{ number_format($product->price_off) }} <small>تومان</small></h3>
                     @else
-                        <h3 class="text-danger font-weight-semi-bold mb-4">{{ $product->price }} <small>تومان</small> </h3>
+                        <h3 class="text-danger font-weight-semi-bold mb-4">{{ number_format($product->price) }} <small>تومان</small> </h3>
                     @endif
                     <p class="mb-4">
                         {{$product->description}}

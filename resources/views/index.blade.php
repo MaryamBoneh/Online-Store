@@ -153,9 +153,9 @@
                         <a class="h6 text-decoration-none text-truncate" href="">{{ $product->name }}</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             @if ($product->price_off)
-                            <h5 class="text-danger">{{ $product->price_off }} <small>تومان</small></h5><h6 class="text-muted mr-2"><del>{{ $product->price }}</del></h6>
+                            <h5 class="text-danger">{{ number_format($product->price_off) }} <small>تومان</small></h5><h6 class="text-muted mr-2"><del>{{ number_format($product->price) }}</del></h6>
                             @else
-                            <h5 class="text-danger">{{ $product->price }} <small>تومان</small> </h5>
+                            <h5 class="text-danger">{{ number_format($product->price) }} <small>تومان</small> </h5>
                             @endif
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
