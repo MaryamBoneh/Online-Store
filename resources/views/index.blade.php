@@ -1,3 +1,7 @@
+@extends('template')
+@section('title')
+فروشگاه آنلاین
+@endsection
 
 @extends('template')
 @section('content')

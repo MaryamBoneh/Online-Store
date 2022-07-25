@@ -1,4 +1,8 @@
 
+@extends('template')
+@section('title')
+کالاها
+@endsection
 
 @extends('template')
 @section('content')
