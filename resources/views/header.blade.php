@@ -84,7 +84,7 @@
                             <a href="/" class="nav-item py-2 nav-link active">خانه</a>
                             <a href="/" class="nav-item py-2 nav-link">فروشگاه</a>
                             <a href="products" class="nav-item py-2 nav-link">کالاها</a>
-                            <a href="/" class="nav-item py-2 nav-link">جزییات خرید</a>
+                            <a href="/cart" class="nav-item py-2 nav-link">جزییات خرید</a>
                             <!-- <a href="checkout.html" class="dropdown-item">Checkout</a> -->
                         </div>
                         <div class="navbar-nav mr-auto pt-3 d-none d-lg-block">

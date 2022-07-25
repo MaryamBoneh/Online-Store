@@ -12,7 +12,7 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb rounded bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#"> &nbsp;خانه</a>
+                    <a class="breadcrumb-item text-dark" href="/"> &nbsp;خانه</a>
                     <span class="breadcrumb-item active"> &nbsp;نام دسته‌بندی</span>
                 </nav>
             </div>

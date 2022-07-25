@@ -11,8 +11,8 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#"> &nbsp;خانه</a>
-                    <a class="breadcrumb-item text-dark" href="#"> &nbsp;نام دسته‌بندی</a>
+                    <a class="breadcrumb-item text-dark" href="/"> &nbsp;خانه</a>
+                    <a class="breadcrumb-item text-dark" href="/"> &nbsp;نام دسته‌بندی</a>
                     <span class="breadcrumb-item active"> &nbsp;نام محصول</span>
                 </nav>
             </div>
