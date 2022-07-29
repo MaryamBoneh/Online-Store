@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [ProductController::class, 'get_all_products']);
 Route::get('/product/{id}',[ProductController::class, "product_details"] );
 Route::get('/cart', [CartController::class, 'get']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/cities', [CityController::class, 'get_all']);
+Route::get('/admin/cities/add', [CityController::class, 'add_get']);
+Route::post('/admin/cities/add', [CityController::class, 'add_post']);
+Route::get('/admin/cities/edit/{id}', [CityController::class, 'edit_get']);
+Route::post('/admin/cities/edit/{id}', [CityController::class, 'edit_post']);
+Route::post('/admin/cities/delete/{id}', [CityController::class, 'delete']);
