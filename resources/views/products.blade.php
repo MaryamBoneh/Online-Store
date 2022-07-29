@@ -125,16 +125,14 @@
                         <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                             <div class="product-item bg-light mb-4 rounded">
                                 <div class="product-img position-relative overflow-hidden rounded">
-                                    <img class="img-fluid w-100" src='img/products/{{ $product->url}}' alt="">
+                                    <img class="img-fluid w-100" src='{{ $product->images->first()->url}}' alt="">
                                     <div class="product-action">
                                         <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                         <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
                                     </div>
                                 </div>
                                 <div class="text-center py-4">
-                                    <a class="h6 text-decoration-none text-truncate" href="">{{ $product->name }}</a>
+                                    <a class="h6 text-decoration-none text-truncate" href="product/{{ $product->id }}">{{ $product->name }}</a>
                                     <div class="d-flex align-items-center justify-content-center mt-2">
                                         @if ($product->price_off)
                                             <h5 class="text-danger">{{ number_format($product->price_off) }} <small>تومان</small></h5><h6 class="text-muted mr-2"><del>{{ number_format($product->price) }}</del></h6>
@@ -142,11 +140,11 @@
                                             <h5 class="text-danger">{{ number_format($product->price) }} <small>تومان</small> </h5>
                                         @endif                                    </div>
                                     <div class="d-flex align-items-center justify-content-center mb-1">
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                                        <small class="fa fa-star text-warning mr-1"></small>
+                                        <small class="fa fa-star text-warning mr-1"></small>
+                                        <small class="fa fa-star text-warning mr-1"></small>
+                                        <small class="fa fa-star text-warning mr-1"></small>
+                                        <small class="fa fa-star-half-alt text-warning mr-1"></small>
                                         <small>(99)</small>
                                     </div>
                                 </div>

@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
 
     function get_all_products(){
-        $products = Product::join('images','products.id','=','images.product_id')->get(['products.*','images.url']);
+        $products = Product::all();
 
         return view("products",[
             "products" => $products
@@ -26,7 +26,7 @@ class ProductController extends Controller
     }
    
     function product_details($id){
-        $product = Product::join('images','products.id','=','images.product_id')->get(['products.*','images.url'])->find($id);
+        $product = Product::find($id);
 
         return view("product",[
             "product" => $product,
