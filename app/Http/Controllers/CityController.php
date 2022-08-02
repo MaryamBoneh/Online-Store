@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
     function get_all(){
-        return view('admin.cities.cities');
+        $cities = City::all();
+
+        return view('admin.cities.cities',[
+            'cities' => $cities
+        ]);
     }
     
     function add_get(){
