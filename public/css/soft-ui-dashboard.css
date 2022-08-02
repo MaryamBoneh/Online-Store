@@ -4,6 +4,12 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+@font-face {
+font-family: 'Open Sans';
+src: url('/fonts/IRANSans(FaNum)_Medium.ttf');
+}
+
 :root {
   --bs-blue: #63B3ED;
   --bs-indigo: #596CFF;
@@ -27,8 +33,8 @@
   --bs-light: #e9ecef;
   --bs-dark: #344767;
   --bs-white: #fff;
-  --bs-font-sans-serif: Open Sans;
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-font-sans-serif: 'Open Sans';
+  --bs-font-monospace: 'Open Sans', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
@@ -23718,7 +23724,7 @@ p {
 }
 
 .flatpickr-current-month span.cur-month {
-  font-family: inherit;
+  font-family: "Open Sans";
   font-weight: 700;
   color: inherit;
   display: inline-block;
@@ -23754,7 +23760,7 @@ p {
   margin: 0;
   display: inline-block;
   font-size: inherit;
-  font-family: inherit;
+  font-family: "Open Sans";
   font-weight: 300;
   line-height: inherit;
   height: auto;
@@ -23787,7 +23793,7 @@ p {
   color: inherit;
   cursor: pointer;
   font-size: inherit;
-  font-family: inherit;
+  font-family: "Open Sans";
   font-weight: 300;
   height: auto;
   line-height: inherit;
@@ -24674,7 +24680,7 @@ pre[class*="language-"] {
   color: black;
   background: none;
   text-shadow: 0 1px white;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: 'Open Sans', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
