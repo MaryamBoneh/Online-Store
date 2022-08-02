@@ -22,10 +22,15 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [ProductController::class, 'get_all_products']);
 Route::get('/product/{id}',[ProductController::class, "product_details"] );
 Route::get('/cart', [CartController::class, 'get']);
+
+/* ----------------Admin---------------- */
 Route::get('/admin', [AdminController::class, 'index']);
+
 Route::get('/admin/cities', [CityController::class, 'get_all']);
 Route::get('/admin/cities/add', [CityController::class, 'add_get']);
 Route::post('/admin/cities/add', [CityController::class, 'add_post']);
 Route::get('/admin/cities/edit/{id}', [CityController::class, 'edit_get']);
 Route::post('/admin/cities/edit/{id}', [CityController::class, 'edit_post']);
 Route::post('/admin/cities/delete/{id}', [CityController::class, 'delete']);
+
+Route::get('/admin/products', [ProductController::class, 'admin_get_all_products']);

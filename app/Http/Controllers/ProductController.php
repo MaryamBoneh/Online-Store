@@ -17,6 +17,14 @@ class ProductController extends Controller
         ]);
     }
 
+    function admin_get_all_products(){
+        $products = Product::all();
+
+        return view("admin.products.products",[
+            "products" => $products
+        ]);
+    }
+
     function get_categories(){
         $categories = Category::all();
 
