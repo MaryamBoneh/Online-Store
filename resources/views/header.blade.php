@@ -89,9 +89,14 @@
                         </div>
                         <div class="navbar-nav mr-auto pt-3 d-none d-lg-block">
                             
-                            <a href="" class="btn ml-4 px-0">
-                                <span class=" text-secondary">ورود به سایت</span>
+                            <a href="/login" class="btn ml-4 px-0">
+                                <span class=" text-secondary">ورود به حساب</span>
                             </a>
+                            @auth
+                            <a href="/logout" class="btn ml-4 px-0">
+                                <span class=" text-secondary">خروج از حساب کاربری</span>
+                            </a>
+                            @endauth
                             <a href="" class="btn px-0">
                                 <i class="fas fa-heart text-danger"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>

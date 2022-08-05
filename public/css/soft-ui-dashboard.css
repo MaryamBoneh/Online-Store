@@ -19300,6 +19300,10 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
+.btn.bg-gradient-green {
+  color: #fff;
+}
+
 .btn-info:hover,
 .btn.bg-gradient-info:hover {
   color: #fff;
@@ -20097,7 +20101,11 @@ label,
 }
 
 .bg-gradient-info {
-  background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+  background-image: linear-gradient(310deg, #0BAB64 0%, #21d4fd 100%);
+}
+
+.bg-gradient-green {
+  background-image: linear-gradient(310deg, #233329 0%, #63D471 100%);
 }
 
 .bg-gradient-warning {
@@ -23264,6 +23272,10 @@ p {
 
 .text-gradient.text-primary {
   background-image: linear-gradient(310deg, #7928CA, #FF0080);
+}
+
+.text-gradient.text-green {
+  background-image: linear-gradient(310deg, #233329, #63D471);
 }
 
 .text-gradient.text-info {
