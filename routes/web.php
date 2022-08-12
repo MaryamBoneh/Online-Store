@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/products', [ProductController::class, 'get_all_products']);
+Route::get('/products', [ProductController::class, 'get_all_for_client']);
 Route::get('/product/{id}',[ProductController::class, "product_details"] );
 Route::get('/cart', [CartController::class, 'get'])->middleware("auth");
 Route::get('/login', [UserController::class, 'login_get']);
@@ -39,4 +39,15 @@ Route::get('/admin/cities/edit/{id}', [CityController::class, 'edit_get']);
 Route::post('/admin/cities/edit/{id}', [CityController::class, 'edit_post']);
 Route::post('/admin/cities/delete/{id}', [CityController::class, 'delete']);
 
-Route::get('/admin/products', [ProductController::class, 'admin_get_all_products']);
+Route::get('/admin/products', [ProductController::class, 'get_all_for_admin']);
+Route::get('/admin/products/add', [ProductController::class, 'add_get']);
+Route::post('/admin/products/add', [ProductController::class, 'add_post']);
+Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_get']);
+Route::post('/admin/products/edit/{id}', [ProductController::class, 'edit_post']);
+Route::post('/admin/products/delete/{id}', [ProductController::class, 'delete']);
+
+
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

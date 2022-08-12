@@ -9,7 +9,7 @@ use App\Models\Category;
 class ProductController extends Controller
 {
 
-    function get_all_products(){
+    function get_all_for_client(){
         $products = Product::all();
 
         return view("products",[
@@ -17,7 +17,7 @@ class ProductController extends Controller
         ]);
     }
 
-    function admin_get_all_products(){
+    function get_all_for_admin(){
         $products = Product::all();
 
         return view("admin.products.products",[
@@ -44,9 +44,25 @@ class ProductController extends Controller
     function get_by_category($category_id){
 
     }
+    
+    function add_get(){
+        return view('admin.products.add_product');
+    }
+    
+    function add_post(Request $request){
 
-    function add(){
+        $new_product = new Product();
+        $new_product->name = $request["name"];
+        $new_product->price = $request["price"];
+        $new_product->description = $request["description"];
+        $new_product->save();
         
+        $new_image = new Image();
+        $new_image->url = $request["image"];
+        
+        $new_product->images()->save($new_image);
+        
+        return redirect('admin.products.products');
     }
 
     function edit(){

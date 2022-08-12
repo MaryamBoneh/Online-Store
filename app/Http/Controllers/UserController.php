@@ -18,7 +18,7 @@ class UserController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        if(Auth::attempt(["username" => $request['username'], "password" => $request['password']]))
+        if(Auth::attempt(["username" => $request['username'], "password" => $request['password'], "role" => "1"], $request['remember_me']))
         {
             return redirect('/profile')->with([
                 "message" => "شما با موفقیت وارد حساب کاربری خود شدید"
