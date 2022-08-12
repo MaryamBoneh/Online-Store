@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,22 +16,24 @@ class UserController extends Controller
     function login_post(Request $request)
     {
         $this->validate($request,[
-            'user_name' => 'required',
-            'password' => 'required|min:8',
+            'mobile_number' => 'required',
+            'password' => 'required|min:6',
         ]);
 
-        if(Auth::attempt(["username" => $request['username'], "password" => $request['password'], "role" => "1"], $request['remember_me']))
+        if(Auth::attempt(["mobile_number" => $request['mobile_number'], "password" => $request['password']], $request['remember_me']))
         {
-            return redirect('/profile')->with([
+            $id = Auth::id();
+            Session::put("user_id", $id);
+
+            return redirect('/')->with([
                 "message" => "شما با موفقیت وارد حساب کاربری خود شدید"
             ]);
         }
-        else{
-            return redirect('/profile')->with([
-                "message" => "شما با موفقیت وارد حساب کاربری خود شدید"
-            ]);
-            
-        }
+        // else {
+        //     return redirect('/profile')->with([
+        //         "message" => "شما با موفقیت وارد حساب کاربری خود شدید"
+        //     ]);
+        // }
         
     }
 

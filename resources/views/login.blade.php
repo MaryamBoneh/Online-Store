@@ -20,21 +20,22 @@
                   <h3 class="font-weight-bolder text-green text-gradient">خوش آمدید</h3>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form method="post" action="{{url('/login')}}">
                     <label>ایمیل یا شماره‌ موبایل</label>
                     <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="" aria-label="Email" aria-describedby="email-addon">
+                      <input type="text" class="form-control" placeholder="" name="mobile_number" aria-label="Email" aria-describedby="email-addon">
                     </div>
                     <label>کلمه عبور</label>
                     <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="" aria-label="Password" aria-describedby="password-addon">
+                      <input type="password" class="form-control" placeholder="" name="password" aria-label="Password" aria-describedby="password-addon">
                     </div>
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
+                      <input class="form-check-input" type="checkbox"  id="rememberMe" name="remember_me" >
                       <label class="form-check-label" for="rememberMe">مرا به خاطر بسپار</label>
                     </div>
                     <div class="text-center">
-                      <button type="button" class="btn bg-gradient-green w-100 mt-4 mb-0">ورود</button>
+                      <input type="hidden" name="_token" value="{{csrf_token()}}" >
+                      <button type="submit" class="btn bg-gradient-green w-100 mt-4 mb-0">ورود</button>
                     </div>
                   </form>
                 </div>
