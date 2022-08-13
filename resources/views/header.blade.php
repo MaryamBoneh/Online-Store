@@ -67,7 +67,9 @@
                                 <a href="" class="dropdown-item">Baby's Dresses</a>
                             </div>
                         </div> -->
-                        <a href="" class="nav-item nav-link">Shirts</a>
+                        @foreach($categories as $category)
+                            <a href="" class="nav-item nav-link">{{ $category->title }}</a>
+                        @endforeach
                     </div>
                 </nav>
             </div>
