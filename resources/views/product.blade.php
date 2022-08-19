@@ -171,11 +171,11 @@
                                     <div class="d-flex my-3">
                                         <p class="mb-0 mr-2">امتیاز شما برای این کالا: &nbsp; &nbsp;</p>
                                         <div class="text-warning">
-                                            <i class="far fa-star rate" onmouseover="draw_rating(1)" onmouseleave="clear_rate()"></i>
-                                            <i class="far fa-star rate" onmouseover="draw_rating(2)" onmouseleave="clear_rate()"></i>
-                                            <i class="far fa-star rate" onmouseover="draw_rating(3)" onmouseleave="clear_rate()"></i>
-                                            <i class="far fa-star rate" onmouseover="draw_rating(4)" onmouseleave="clear_rate()"></i>
-                                            <i class="far fa-star rate" onmouseover="draw_rating(5)" onmouseleave="clear_rate()"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(1)" onmouseleave="clear_rate()" onclick="add_rate(1)"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(2)" onmouseleave="clear_rate()" onclick="add_rate(2)"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(3)" onmouseleave="clear_rate()" onclick="add_rate(3)"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(4)" onmouseleave="clear_rate()" onclick="add_rate(4)"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(5)" onmouseleave="clear_rate()" onclick="add_rate(5)"></i>
                                         </div>
                                     </div>
                                     <form>
@@ -200,16 +200,20 @@
     <script>
         var stars = document.getElementsByClassName("rate");
 
-        function add_rating(x){
+        function add_rate(x){
             
             var json_data = {
-                product_id : {{product.id}},
+                product_id : "{{$product->id}}",
                 score : x
             };
 
+            console.log('json_data', json_data);
+
             var my_data = new FormData;
-            my_data.append("json", JSON.stringify(json_data));
-    
+            my_data.append('json', JSON.stringify(json_data));
+
+            console.log('my_data', my_data['json']);
+
             fetch("/send-rating", {
                 method: "post",
                 data: my_data
@@ -233,17 +237,15 @@
                 stars[i].classList.add("far");
                 stars[i].classList.remove("fas");
             }
-
         }
 
 
         function clear_rate() {
 
             for(var i = 0; i < 5; i++ ){
-                stars[i].classList.add("fas");
-                stars[i].classList.remove("far");
+                stars[i].classList.add("far");
+                stars[i].classList.remove("fas");
             }
-
         }
     </script>
 @endsection

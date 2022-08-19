@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Star;
 
 class ProductController extends Controller
 {
@@ -47,8 +48,14 @@ class ProductController extends Controller
     
     function add_rating(Request $request){
 
+        $can_star = DB::table('star')->where([
+            ['user_id', '=', '1'],
+            ['product_id', '=', '1'],
+        ])->get();
+
+
         $star = new Star();
-        if (){
+        if (shart){
             $star = new Star();
             $star->user_id = $request->
             $star->product_id = $request->
