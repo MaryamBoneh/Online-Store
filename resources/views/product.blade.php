@@ -171,11 +171,11 @@
                                     <div class="d-flex my-3">
                                         <p class="mb-0 mr-2">امتیاز شما برای این کالا: &nbsp; &nbsp;</p>
                                         <div class="text-warning">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(1)" onmouseleave="clear_rate()"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(2)" onmouseleave="clear_rate()"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(3)" onmouseleave="clear_rate()"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(4)" onmouseleave="clear_rate()"></i>
+                                            <i class="far fa-star rate" onmouseover="draw_rating(5)" onmouseleave="clear_rate()"></i>
                                         </div>
                                     </div>
                                     <form>
@@ -197,4 +197,53 @@
     </div>
     <!-- Shop Detail End -->
 
+    <script>
+        var stars = document.getElementsByClassName("rate");
+
+        function add_rating(x){
+            
+            var json_data = {
+                product_id : {{product.id}},
+                score : x
+            };
+
+            var my_data = new FormData;
+            my_data.append("json", JSON.stringify(json_data));
+    
+            fetch("/send-rating", {
+                method: "post",
+                data: my_data
+            })
+    
+            .then(result =>result.text())
+            .then(result => {
+                alert("امتیاز با موفقیت ثبت شد.")
+            });
+        }
+
+
+        function draw_rating(x) {
+
+            for(var i = 0; i < x; i++ ){
+                stars[i].classList.add("fas");
+                stars[i].classList.remove("far");
+            }
+
+            for(var i = x; i < 5; i++ ){
+                stars[i].classList.add("far");
+                stars[i].classList.remove("fas");
+            }
+
+        }
+
+
+        function clear_rate() {
+
+            for(var i = 0; i < 5; i++ ){
+                stars[i].classList.add("fas");
+                stars[i].classList.remove("far");
+            }
+
+        }
+    </script>
 @endsection

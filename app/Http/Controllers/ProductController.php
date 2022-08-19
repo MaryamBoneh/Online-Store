@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
 
     function get_all_for_client(){
-        $products = Product::all();
+        $products = Product::paginate(6);
 
         return view("products",[
             "products" => $products
@@ -43,6 +43,25 @@ class ProductController extends Controller
 
     function get_by_category($category_id){
 
+    }
+    
+    function add_rating(Request $request){
+
+        $star = new Star();
+        if (){
+            $star = new Star();
+            $star->user_id = $request->
+            $star->product_id = $request->
+            $star->score = $request->
+    
+            $star->save();
+        }
+        else{
+            
+            $star->update();
+        }
+
+        return "ok";
     }
     
     function add_get(){
