@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -38,24 +39,32 @@ class UserController extends Controller
     }
 
     function register_get()
-    {
+    {        
+        $cities = City::all();
+
         return view('register')->with([
+            "cities"=>$cities
         ]);
     }
     
     function register_post(Request $request)
     {
         $this->validate($request,[
-            'email' => 'required|unique:users',
-            'user_name' => 'required|unique:users',
-            'name' => 'required|max:120',
-            'password' => 'required',
-            'confirm_password' => 'required',
+            'mobile_number'=>'required|unique:users',
+            'name'=>'required|max:120',
+            'email'=>'required|unique:users',
+            'password'=>'required|min:8',
+            'password2'=>'required|same:password',
         ]);
         
         $new_user = new User();
-        $new_user->name = $request['name'];
-        $new_user->email = $request['email'];
+        $new_user->name = $request["name"];
+        $new_user->mobile_number = $request["mobile_number"];
+        $new_user->email = $request["email"];
+        $new_user->city_id = $request["city"];
+        $new_user->address = $request["address"];
+        $new_user->password = bcrypt($request["password"]);
+        $new_user->save();
 
         return redirect('\login');
     }

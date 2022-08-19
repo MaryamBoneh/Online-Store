@@ -20,29 +20,45 @@
                   <h3 class="font-weight-bolder text-green text-gradient">خوش آمدید</h3>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form role="form" action="{{url('/register')}}">
+                    
                     <label>نام</label>
                     <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="" aria-label="Email">
+                      <input type="text" class="form-control" placeholder="" name="name">
                     </div>
+                    
                     <label>شماره‌ موبایل</label>
                     <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="" aria-label="Email">
+                      <input type="text" class="form-control" placeholder="" name="mobile_number">
                     </div>
+                    
                     <label>ایمیل</label>
                     <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="" aria-label="Email" aria-describedby="email-addon">
+                      <input type="email" class="form-control" placeholder="" name="email" aria-describedby="email-addon">
                     </div>
+                    
+                    <label>شهر</label>
+                    <div class="mb-3">
+                      <select class="form-select" name="city">
+                          @foreach($cities as $city)
+                            <option value="{{$city->id}}">{{$city->name}}</option>
+                          @endforeach
+                      </select>
+                    </div>
+                    
                     <label>کلمه عبور</label>
                     <div class="mb-3">
-                      <input type="password" class="form-control" placeholder="" aria-label="Password" aria-describedby="password-addon">
+                      <input type="password" class="form-control" placeholder="" name="password" aria-label="Password" aria-describedby="password-addon">
                     </div>
+                    
                     <label>تکرار کلمه عبور</label>
                     <div class="mb-3">
                       <input type="password" class="form-control" placeholder="" aria-label="Password" aria-describedby="password-addon">
                     </div>
                     <div class="text-center">
-                      <button type="button" class="btn bg-gradient-green w-100 mt-4 mb-0">ثبت‌ نام</button>
+                      <input type="hidden" name="role" value="1" >
+                      <input type="hidden" name="_token" value="{{csrf_token()}}" >
+                      <button type="submit" class="btn bg-gradient-green w-100 mt-4 mb-0">ثبت‌ نام</button>
                     </div>
                   </form>
                 </div>
