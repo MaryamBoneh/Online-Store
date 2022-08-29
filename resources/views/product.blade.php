@@ -126,7 +126,7 @@
                                 </button>
                             </div>
                         </div>
-                        <button class="btn btn-primary px-3 rounded mr-5"><i class="fa fa-shopping-cart mr-1"></i> افزودن به سبد خرید</button>
+                        <button class="btn btn-primary px-3 rounded mr-5" onclick='add_to_cart({{ $product->id }}, "")'><i class="fa fa-shopping-cart mr-1"></i> افزودن به سبد خرید</button>
                     </div>
                 </div>
             </div>
@@ -178,12 +178,13 @@
                                             <i class="far fa-star rate" onmouseover="draw_rating(5)" onmouseleave="clear_rate()" onclick="add_rate(5)"></i>
                                         </div>
                                     </div>
-                                    <form>
+                                    <form method="post">
                                         <div class="form-group">
                                             <label for="message">دیدگاه شما *</label>
                                             <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
                                         </div>
                                         <div class="form-group mb-0 text-light">
+                                            <input type="hidden" name="_token" value="{{csrf_token()}}" >
                                             <input type="submit" value="ثبت دیدگاه" class="btn btn-primary px-3 rounded">
                                         </div>
                                     </form>
@@ -207,14 +208,18 @@
                 score : x
             };
 
-            console.log('json_data', json_data);
-
             var my_data = new FormData;
             my_data.append('json', JSON.stringify(json_data));
 
-            console.log('my_data', my_data['json']);
+            console.log('my_data', my_data);
 
             fetch("/send-rating", {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRF-Token": {{ csrf_token }}
+                },
                 method: "post",
                 data: my_data
             })

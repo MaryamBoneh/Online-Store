@@ -48,7 +48,7 @@ class CityController extends Controller
     function delete($id){
         $city = City::find($id);
 
-        if (!$city){
+        if(!$city){
             $message = 'محصول پیدا نشد';
             $message_tyoe = 'danger';
         }

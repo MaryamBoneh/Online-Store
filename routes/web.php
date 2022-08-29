@@ -21,7 +21,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [ProductController::class, 'get_all_for_client']);
-Route::get('/product/{id}',[ProductController::class, "product_details"] );
+Route::get('/product/{id}', [ProductController::class, "product_details"] );
 Route::post('/send-rating', [ProductController::class, 'add_rating']);
 Route::get('/cart', [CartController::class, 'get'])->middleware("auth");
 Route::get('/login', [UserController::class, 'login_get']);
