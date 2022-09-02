@@ -48,23 +48,20 @@ class ProductController extends Controller
     
     function add_rating(Request $request){
 
-        $can_star = DB::table('star')->where([
-            ['user_id', '=', '1'],
-            ['product_id', '=', '1'],
-        ])->get();
-
+        $stars = Star::where('user_id', '=', Auth::id())->where('product_id', '=', $request['product_id']);
 
         $star = new Star();
         // if (shart){
         //     $star = new Star();
-        //     $star->user_id = $request->
-        //     $star->product_id = $request->
+        //     $star->user_id = Auth::id();
+        //     $star->product_id = $request["product_id"];
         //     $star->score = $request->
     
         //     $star->save();
         // }
         // else{
-            
+        //     $star = stars::first();
+        //     $star->score = ;
         //     $star->update();
         // }
 
