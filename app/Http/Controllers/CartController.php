@@ -8,6 +8,6 @@ class CartController extends Controller
 {
     function get(){
         // read from database
-        return view ('cart');
+        return view('cart');
     }
 }

@@ -55,18 +55,18 @@ class ProductController extends Controller
 
 
         $star = new Star();
-        if (shart){
-            $star = new Star();
-            $star->user_id = $request->
-            $star->product_id = $request->
-            $star->score = $request->
+        // if (shart){
+        //     $star = new Star();
+        //     $star->user_id = $request->
+        //     $star->product_id = $request->
+        //     $star->score = $request->
     
-            $star->save();
-        }
-        else{
+        //     $star->save();
+        // }
+        // else{
             
-            $star->update();
-        }
+        //     $star->update();
+        // }
 
         return "ok";
     }
