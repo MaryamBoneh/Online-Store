@@ -50,22 +50,22 @@ class ProductController extends Controller
 
         $stars = Star::where('user_id', '=', Auth::id())->where('product_id', '=', $request['product_id']);
 
-        $star = new Star();
-        // if (shart){
-        //     $star = new Star();
-        //     $star->user_id = Auth::id();
-        //     $star->product_id = $request["product_id"];
-        //     $star->score = $request->
-    
-        //     $star->save();
-        // }
-        // else{
-        //     $star = stars::first();
-        //     $star->score = ;
-        //     $star->update();
-        // }
-
-        return "ok";
+        if($stars->count() == 0) 
+        {
+            $star = new Star();
+            $star->user_id = Auth::id();
+            $star->product_id = $request["product_id"];
+            $star->score = $request["score"];
+            $star->save();
+        }
+        else 
+        {
+            $star = $stars->first();
+            $star->score = $request["score"];
+            $star->update();
+        }
+        
+        return $request["score"];
     }
     
     function add_get(){
