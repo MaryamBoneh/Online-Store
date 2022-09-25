@@ -30,11 +30,12 @@ class UserController extends Controller
                 "message" => "شما با موفقیت وارد حساب کاربری خود شدید"
             ]);
         }
-        // else {
-        //     return redirect('/profile')->with([
-        //         "message" => "شما با موفقیت وارد حساب کاربری خود شدید"
-        //     ]);
-        // }
+        else
+        {
+            return redirect('/login')->with([
+                "message" => "نام کاربری یا کلمه عبور اشتباه است."
+            ]);
+        }
         
     }
 
