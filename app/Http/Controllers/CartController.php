@@ -34,4 +34,24 @@ class CartController extends Controller
             
         }
     }
+
+    function delete($id)
+    {
+        $cart = Cart::find($id);
+        if(!$cart) 
+        {
+            $message = 'cart is empty';
+            $message_tyoe = 'danger';
+        }
+        else{
+            $cart->delete();
+            $message = "The cart has been successfully emptied" ;
+            $message_type = "success"; 
+        }
+
+        return redirect("/cart")->with([
+            "message"=>$message,
+            "message_type"=>$message_type
+        ]); 
+    }
 }
