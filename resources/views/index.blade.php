@@ -149,8 +149,8 @@
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src='{{ ($product->images->first()->url)}}' alt="">
                         <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square rounded" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square rounded" href=""><i class="far fa-heart"></i></a>
+                            <button class="btn btn-outline-dark btn-square rounded ml-2" onclick='add_to_cart({{ $product->id }}, "{{ csrf_token() }}")'><i class="fa fa-shopping-cart"></i></button>
+                            <button  class="btn btn-outline-dark btn-square rounded ml-2"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="text-center py-4 overflow-hidden">
@@ -179,4 +179,26 @@
     </div>
     <!-- Products End -->
 
+    <script>
+        function add_to_cart(product_id, csrf_token) {
+            var json_data = {
+                product_id: product_id,
+            };
+
+            fetch("/add-to-cart", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    // "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRF-Token": csrf_token,
+                },
+                body: JSON.stringify(json_data),
+            })
+                .then(result => result.text())
+                .then(result => {
+                    alert(result);
+                });
+        }
+    </script>
 @endsection

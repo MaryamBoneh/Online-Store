@@ -28,10 +28,10 @@
                         <div class="col-md-4 mb-5">
                             <h6 class="text-secondary text-uppercase mb-3">همراه ما باشید</h6>
                             <div class="d-flex justify-content-end mt-5">
-                                <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-primary btn-square mr-2 rounded" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-square mr-2 rounded" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-square mr-2 rounded" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-square mr-2 rounded" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -48,5 +48,5 @@
             </div>
         </div>
         <!-- Footer End -->
-        <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        <a href="#" class="btn btn-primary back-to-top rounded"><i class="fa fa-angle-double-up"></i></a>
 

@@ -24,6 +24,7 @@ Route::get('/products', [ProductController::class, 'get_all_for_client']);
 Route::get('/product/{id}', [ProductController::class, "product_details"] );
 Route::post('/send-rating', [ProductController::class, 'add_rating']);
 Route::get('/cart', [CartController::class, 'get'])->middleware("auth");
+Route::post('/add-to-cart', [CartController::class, 'add'])->middleware("auth");
 Route::get('/login', [UserController::class, 'login_get']);
 Route::post('/login', [UserController::class, 'login_post']);
 Route::get('/register', [UserController::class, 'register_get']);
